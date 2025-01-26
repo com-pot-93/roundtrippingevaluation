@@ -1,0 +1,745 @@
+{
+    "5_2.txt": {
+        "0": {
+            "text": "The process begins when an employee submits a vacation request. This request is then registered by the supervisor. Following the registration, the supervisor decides whether to approve or reject the request. If the request is rejected, the employee reviews the rejection reasons, and the process ends with the request being rejected. If the request is approved, the HR representative completes the necessary management procedures, and the process concludes with the request being approved.",
+            "model": {
+                "tasks": [
+                    {
+                        "id": "id1",
+                        "name": "Submit vacation request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id2",
+                        "name": "Register requirement",
+                        "type": "Manual"
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Review rejection reasons",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id4",
+                        "name": "Complete management procedures",
+                        "type": "User"
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "id5",
+                        "name": "start",
+                        "type": "StartNoneEvent"
+                    },
+                    {
+                        "id": "id6",
+                        "name": "request approved",
+                        "type": "EndNoneEvent"
+                    },
+                    {
+                        "id": "id7",
+                        "name": "request rejected",
+                        "type": "EndNoneEvent"
+                    }
+                ],
+                "gateways": [
+                    {
+                        "id": "id8",
+                        "name": "Approve or Reject?",
+                        "type": "Exclusive"
+                    }
+                ],
+                "pools": [
+                    {
+                        "id": "pool1",
+                        "name": "Organization",
+                        "lanes": [
+                            {
+                                "id": "lane1",
+                                "name": "Employee",
+                                "elemRefs": [
+                                    "id1",
+                                    "id3"
+                                ]
+                            },
+                            {
+                                "id": "lane2",
+                                "name": "Supervisor",
+                                "elemRefs": [
+                                    "id2",
+                                    "id8"
+                                ]
+                            },
+                            {
+                                "id": "lane3",
+                                "name": "HR Representative",
+                                "elemRefs": [
+                                    "id4"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "sequenceFlows": [
+                    {
+                        "id": "id9",
+                        "sourceRef": "id5",
+                        "targetRef": "id1"
+                    },
+                    {
+                        "id": "id10",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "id11",
+                        "sourceRef": "id2",
+                        "targetRef": "id8"
+                    },
+                    {
+                        "id": "id12",
+                        "sourceRef": "id8",
+                        "targetRef": "id3",
+                        "name": "rejected"
+                    },
+                    {
+                        "id": "id13",
+                        "sourceRef": "id8",
+                        "targetRef": "id4",
+                        "name": "approved"
+                    },
+                    {
+                        "id": "id14",
+                        "sourceRef": "id3",
+                        "targetRef": "id7"
+                    },
+                    {
+                        "id": "id15",
+                        "sourceRef": "id4",
+                        "targetRef": "id6"
+                    }
+                ],
+                "messageFlows": []
+            }
+        },
+        "1": {
+            "text": "The process begins with the start event, where an employee submits a vacation request. The request is then received by the supervisor. The supervisor proceeds to approve or reject the request. \n\nAt this point, an approval decision is made. If the request is approved, a notification is generated and sent to Human Resources. Human Resources then completes the necessary management procedures, and the process ends.\n\nIf the request is rejected, the employee reviews the rejection reasons, and the process ends with the rejection.",
+            "model": {
+                "tasks": [
+                    {
+                        "id": "id1",
+                        "name": "Submit vacation request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id2",
+                        "name": "Receive request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Approve or reject request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id4",
+                        "name": "Review rejection reasons",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id5",
+                        "name": "Generate notification to HR",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id6",
+                        "name": "Complete management procedures",
+                        "type": "User"
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "id7",
+                        "name": "Start",
+                        "type": "StartNoneEvent"
+                    },
+                    {
+                        "id": "id8",
+                        "name": "End",
+                        "type": "EndNoneEvent"
+                    },
+                    {
+                        "id": "id9",
+                        "name": "End with rejection",
+                        "type": "EndNoneEvent"
+                    }
+                ],
+                "gateways": [
+                    {
+                        "id": "id10",
+                        "name": "Approval decision",
+                        "type": "Exclusive"
+                    }
+                ],
+                "pools": [
+                    {
+                        "id": "id11",
+                        "name": "Organization",
+                        "lanes": [
+                            {
+                                "id": "id12",
+                                "name": "Employee",
+                                "elemRefs": [
+                                    "id1",
+                                    "id4"
+                                ]
+                            },
+                            {
+                                "id": "id13",
+                                "name": "Supervisor",
+                                "elemRefs": [
+                                    "id2",
+                                    "id3",
+                                    "id10"
+                                ]
+                            },
+                            {
+                                "id": "id14",
+                                "name": "Human Resources",
+                                "elemRefs": [
+                                    "id5",
+                                    "id6"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "messageFlows": [],
+                "sequenceFlows": [
+                    {
+                        "id": "id15",
+                        "sourceRef": "id7",
+                        "targetRef": "id1"
+                    },
+                    {
+                        "id": "id16",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "id17",
+                        "sourceRef": "id2",
+                        "targetRef": "id3"
+                    },
+                    {
+                        "id": "id18",
+                        "sourceRef": "id3",
+                        "targetRef": "id10"
+                    },
+                    {
+                        "id": "id19",
+                        "sourceRef": "id10",
+                        "targetRef": "id5",
+                        "condition": "approved"
+                    },
+                    {
+                        "id": "id20",
+                        "sourceRef": "id10",
+                        "targetRef": "id4",
+                        "condition": "rejected"
+                    },
+                    {
+                        "id": "id21",
+                        "sourceRef": "id5",
+                        "targetRef": "id6"
+                    },
+                    {
+                        "id": "id22",
+                        "sourceRef": "id6",
+                        "targetRef": "id8"
+                    },
+                    {
+                        "id": "id23",
+                        "sourceRef": "id4",
+                        "targetRef": "id9"
+                    }
+                ]
+            }
+        },
+        "2": {
+            "text": "The process begins with the submission of a vacation request. Once the request is submitted, it is received by the appropriate party. The request is then reviewed to determine whether it should be approved or rejected.\n\nIf the request is approved, a notification is generated and sent to HR. Following this, the necessary management procedures are completed, and the process concludes.\n\nIf the request is rejected, the reasons for the rejection are reviewed, and the process ends.",
+            "model": {
+                "tasks": [
+                    {
+                        "id": "id1",
+                        "name": "Submit vacation request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id2",
+                        "name": "Receive request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Approve or reject request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id4",
+                        "name": "Review rejection reasons",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id5",
+                        "name": "Generate notification to HR",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id6",
+                        "name": "Complete management procedures",
+                        "type": "User"
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "id7",
+                        "name": "start",
+                        "type": "StartNoneEvent"
+                    },
+                    {
+                        "id": "id8",
+                        "name": "end",
+                        "type": "EndNoneEvent"
+                    },
+                    {
+                        "id": "id9",
+                        "name": "end",
+                        "type": "EndNoneEvent"
+                    }
+                ],
+                "gateways": [
+                    {
+                        "id": "id10",
+                        "name": "Request approved?",
+                        "type": "Exclusive"
+                    }
+                ],
+                "pools": [],
+                "sequenceFlows": [
+                    {
+                        "id": "id11",
+                        "sourceRef": "id7",
+                        "targetRef": "id1"
+                    },
+                    {
+                        "id": "id12",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "id13",
+                        "sourceRef": "id2",
+                        "targetRef": "id3"
+                    },
+                    {
+                        "id": "id14",
+                        "sourceRef": "id3",
+                        "targetRef": "id10"
+                    },
+                    {
+                        "id": "id15",
+                        "sourceRef": "id10",
+                        "targetRef": "id4",
+                        "condition": "Rejected"
+                    },
+                    {
+                        "id": "id16",
+                        "sourceRef": "id10",
+                        "targetRef": "id5",
+                        "condition": "Approved"
+                    },
+                    {
+                        "id": "id17",
+                        "sourceRef": "id5",
+                        "targetRef": "id6"
+                    },
+                    {
+                        "id": "id18",
+                        "sourceRef": "id4",
+                        "targetRef": "id9"
+                    },
+                    {
+                        "id": "id19",
+                        "sourceRef": "id6",
+                        "targetRef": "id8"
+                    }
+                ],
+                "messageFlows": []
+            }
+        }
+    },
+    "10_13.txt": {
+        "0": {
+            "text": "The process begins with the initiation of a start event. The first action is to transmit a transaction data request from the INQ pool. This request is then checked by the IP pool. \n\nFollowing the check, a decision is made on whether to transmit the data or reject the request. If the decision is to transmit the data, the data is transmitted by the IP pool. If the decision is to reject the request, the request is rejected by the IP pool.\n\nRegardless of whether the data is transmitted or the request is rejected, the next step is to answer the INQ from the INQ pool. The process concludes with an end event.",
+            "model": {
+                "tasks": [
+                    {
+                        "id": "id1",
+                        "name": "Transmit transaction data request",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id2",
+                        "name": "Check request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Answer INQ",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id4",
+                        "name": "Transmit data",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id5",
+                        "name": "Reject request",
+                        "type": "Service"
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "id6",
+                        "name": "start",
+                        "type": "StartNoneEvent"
+                    },
+                    {
+                        "id": "id7",
+                        "name": "end",
+                        "type": "EndNoneEvent"
+                    }
+                ],
+                "gateways": [
+                    {
+                        "id": "id8",
+                        "name": "Data transmission or rejection?",
+                        "type": "Exclusive"
+                    }
+                ],
+                "pools": [
+                    {
+                        "id": "pool1",
+                        "name": "INQ",
+                        "lanes": [
+                            {
+                                "id": "lane1",
+                                "name": "INQ",
+                                "elemRefs": [
+                                    "id1",
+                                    "id3"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "pool2",
+                        "name": "IP",
+                        "lanes": [
+                            {
+                                "id": "lane2",
+                                "name": "IP",
+                                "elemRefs": [
+                                    "id2",
+                                    "id4",
+                                    "id5"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "sequenceFlows": [
+                    {
+                        "id": "flow1",
+                        "sourceRef": "id6",
+                        "targetRef": "id1"
+                    },
+                    {
+                        "id": "flow2",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "flow3",
+                        "sourceRef": "id2",
+                        "targetRef": "id8"
+                    },
+                    {
+                        "id": "flow4",
+                        "sourceRef": "id8",
+                        "targetRef": "id4"
+                    },
+                    {
+                        "id": "flow5",
+                        "sourceRef": "id8",
+                        "targetRef": "id5"
+                    },
+                    {
+                        "id": "flow6",
+                        "sourceRef": "id4",
+                        "targetRef": "id3"
+                    },
+                    {
+                        "id": "flow7",
+                        "sourceRef": "id5",
+                        "targetRef": "id3"
+                    },
+                    {
+                        "id": "flow8",
+                        "sourceRef": "id3",
+                        "targetRef": "id7"
+                    }
+                ],
+                "messageFlows": []
+            }
+        },
+        "1": {
+            "text": "The process begins with the initiation of a transaction data request. This request is transmitted by the INQ lane within the INQ pool.\n\nOnce the transaction data request is transmitted, it is checked by the IP lane within the IP pool.\n\nFollowing the check, a decision is made on the outcome of the request.\n\nIf the request is approved, the question is answered by the IP lane.\n\nFinally, the process concludes with the end event.",
+            "model": {
+                "tasks": [
+                    {
+                        "id": "id1",
+                        "name": "Transmit transaction data request",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id2",
+                        "name": "Check request",
+                        "type": "User"
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Answer the question",
+                        "type": "User"
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "id4",
+                        "name": "start",
+                        "type": "StartNoneEvent"
+                    },
+                    {
+                        "id": "id6",
+                        "name": "end",
+                        "type": "EndNoneEvent"
+                    }
+                ],
+                "gateways": [
+                    {
+                        "id": "id5",
+                        "name": "Decision on request outcome",
+                        "type": "Exclusive"
+                    }
+                ],
+                "pools": [
+                    {
+                        "id": "id7",
+                        "name": "INQ",
+                        "lanes": [
+                            {
+                                "id": "id8",
+                                "name": "INQ Lane",
+                                "elemRefs": [
+                                    "id1"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "id9",
+                        "name": "IP",
+                        "lanes": [
+                            {
+                                "id": "id10",
+                                "name": "IP Lane",
+                                "elemRefs": [
+                                    "id2",
+                                    "id3"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "sequenceFlows": [
+                    {
+                        "id": "id11",
+                        "sourceRef": "id4",
+                        "targetRef": "id1"
+                    },
+                    {
+                        "id": "id12",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "id13",
+                        "sourceRef": "id2",
+                        "targetRef": "id5"
+                    },
+                    {
+                        "id": "id14",
+                        "sourceRef": "id5",
+                        "targetRef": "id3"
+                    },
+                    {
+                        "id": "id15",
+                        "sourceRef": "id3",
+                        "targetRef": "id6"
+                    }
+                ],
+                "messageFlows": [
+                    {
+                        "id": "id16",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    }
+                ]
+            }
+        },
+        "2": {
+            "text": "The process begins with the initiation of a transaction data request. This request is transmitted by the INQ Lane within the INQ pool. \n\nOnce the transaction data request is transmitted, it is checked by the IP Lane within the IP pool. \n\nFollowing the check, a decision is made at an exclusive gateway. If the request is approved, the data is transmitted by the INQ Lane. If the request is rejected, the request is rejected by the INQ Lane. \n\nThe process concludes with the end event, regardless of whether the data was transmitted or the request was rejected. \n\nThroughout the process, there are communications between the INQ and IP pools. The initial transaction data request is sent from the INQ Lane to the IP Lane. Depending on the decision made by the IP Lane, either the data transmission or the rejection of the request is communicated back to the INQ Lane.",
+            "model": {
+                "tasks": [
+                    {
+                        "id": "id1",
+                        "name": "Transmit transaction data request",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id2",
+                        "name": "Check transaction data request",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Transmit data",
+                        "type": "Service"
+                    },
+                    {
+                        "id": "id4",
+                        "name": "Reject request",
+                        "type": "Service"
+                    }
+                ],
+                "events": [
+                    {
+                        "id": "id5",
+                        "name": "Start",
+                        "type": "StartNoneEvent"
+                    },
+                    {
+                        "id": "id6",
+                        "name": "End",
+                        "type": "EndNoneEvent"
+                    }
+                ],
+                "gateways": [
+                    {
+                        "id": "id7",
+                        "name": "",
+                        "type": "Exclusive"
+                    }
+                ],
+                "pools": [
+                    {
+                        "id": "id8",
+                        "name": "INQ",
+                        "lanes": [
+                            {
+                                "id": "id9",
+                                "name": "INQ Lane",
+                                "elemRefs": [
+                                    "id1",
+                                    "id3",
+                                    "id4"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "id10",
+                        "name": "IP",
+                        "lanes": [
+                            {
+                                "id": "id11",
+                                "name": "IP Lane",
+                                "elemRefs": [
+                                    "id2"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "sequenceFlows": [
+                    {
+                        "id": "id12",
+                        "sourceRef": "id5",
+                        "targetRef": "id1"
+                    },
+                    {
+                        "id": "id13",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "id14",
+                        "sourceRef": "id2",
+                        "targetRef": "id7"
+                    },
+                    {
+                        "id": "id15",
+                        "sourceRef": "id7",
+                        "targetRef": "id3",
+                        "condition": "Approved"
+                    },
+                    {
+                        "id": "id16",
+                        "sourceRef": "id7",
+                        "targetRef": "id4",
+                        "condition": "Rejected"
+                    },
+                    {
+                        "id": "id17",
+                        "sourceRef": "id3",
+                        "targetRef": "id6"
+                    },
+                    {
+                        "id": "id18",
+                        "sourceRef": "id4",
+                        "targetRef": "id6"
+                    }
+                ],
+                "messageFlows": [
+                    {
+                        "id": "id19",
+                        "sourceRef": "id1",
+                        "targetRef": "id2"
+                    },
+                    {
+                        "id": "id20",
+                        "sourceRef": "id2",
+                        "targetRef": "id3"
+                    },
+                    {
+                        "id": "id21",
+                        "sourceRef": "id2",
+                        "targetRef": "id4"
+                    }
+                ]
+            }
+        }
+    }
+}

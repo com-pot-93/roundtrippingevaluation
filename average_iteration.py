@@ -28,8 +28,6 @@ def main_pipeline(llm, direction, model_path, text_path, example):
     m2m_eval_1 = {}
     m2m_eval_2 = {}
     artefacts = {}
-    temp_in = 1
-    temp_out = 0
     iterations = 3
 
 

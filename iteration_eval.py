@@ -22,97 +22,6 @@ from round_trip.m2t.create_description import generate_prompt_gemini as generate
 from round_trip.t2m.create_model import generate_prompt_gemini as generate_prompt_gemini_t2m
 
 
-class Prompt:
-    def __init__(self, llm, path_to_json, path_to_text, json_desc,temp_in,temp_out):
-        self.temp_in = temp_in
-        self.temp_out = temp_out
-        if llm == 'gemini':
-            self.system_prompt_gemini_t2m, self.examples_t2m = generate_prompt_gemini_t2m(path_to_json, path_to_text, json_desc)
-            self.system_prompt_gemini_m2t, self.examples_m2t = generate_prompt_gemini_m2t(path_to_json, path_to_text)
-        elif llm == 'gpt':
-            self.system_prompt_t2m, self.user_prompt_t2m, self.assistant_prompt_t2m = generate_prompt_gpt_t2m(path_to_json, path_to_text, json_desc)
-            self.system_prompt_m2t, self.user_prompt_m2t, self.assistant_prompt_m2t = generate_prompt_gpt_m2t(path_to_json, path_to_text)
-
-def generate_artefacts_with_gemini(prompt, direction, model, description):
-    gen_text = ''
-    gen_model = ''
-    if direction == 'm2m':
-        gen_text = generate_gemini_with_timeout(
-            prompt.system_prompt_gemini_m2t,
-            prompt.examples_m2t,
-            "Here is the model: " + str(model),
-            prompt.temp_in,
-            response_format=False
-        )
-
-        if gen_text:
-            gen_model = generate_gemini_with_timeout(
-                prompt.system_prompt_gemini_t2m,
-                prompt.examples_t2m,
-                "Here is the textual description: " + gen_text,
-                prompt.temp_out,
-                response_format=True
-            )
-    elif direction == 't2t':
-        gen_model = generate_gemini_with_timeout(
-            prompt.system_prompt_gemini_t2m,
-            prompt.examples_t2m,
-            "Here is the texual description: " + str(description),
-            prompt.temp_in,
-            response_format=True
-        )
-
-        if gen_model:
-            gen_text = generate_gemini_with_timeout(
-                prompt.system_prompt_gemini_m2t,
-                prompt.examples_m2t,
-                "Here is the model: " + str(gen_model),
-                prompt.temp_out,
-                response_format=False
-            )
-    return gen_text, gen_model
-
-def generate_artefacts_with_gpt(prompt, direction, model, description):
-    gen_text = ''
-    gen_model = ''
-    if direction == 'm2m':
-        gen_text = generate_gpt_with_timeout(
-            prompt.system_prompt_m2t,
-            prompt.user_prompt_m2t,
-            prompt.assistant_prompt_m2t,
-            "Here is the model: " + str(model),
-            prompt.temp_in,
-            response_format=False
-        )
-        if gen_text:
-            gen_model = generate_gpt_with_timeout(
-                prompt.system_prompt_t2m,
-                prompt.user_prompt_t2m,
-                prompt.assistant_prompt_t2m,
-                "Here is the textual description: " + gen_text,
-                prompt.temp_out,
-                response_format=True
-            )
-    elif direction == 't2t':
-        gen_model = generate_gpt_with_timeout(
-            prompt.system_prompt_t2m,
-            prompt.user_prompt_t2m,
-            prompt.assistant_prompt_t2m,
-            "Here is the texual description: " + str(description),
-            prompt.temp_in,
-            response_format=True
-        )
-        if gen_model:
-            gen_text = generate_gpt_with_timeout(
-                prompt.system_prompt_m2t,
-                prompt.user_prompt_m2t,
-                prompt.assistant_prompt_m2t,
-                "Here is the model: " + str(gen_model),
-                prompt.temp_out,
-                response_format=False
-            )
-    return gen_text, gen_model
-
 def main_pipeline(llm, direction, model_path, text_path, example):
     # Setup logging
     logging.basicConfig(
@@ -136,8 +45,6 @@ def main_pipeline(llm, direction, model_path, text_path, example):
     m2m_eval_1 = {}
     m2m_eval_2 = {}
     artefacts = {}
-    temp_in = 1
-    temp_out = 0
     iterations = 3
 
     if direction == 'm2m':
@@ -153,6 +60,8 @@ def main_pipeline(llm, direction, model_path, text_path, example):
 
     results = {}
     for i, file in enumerate(files_to_iterate):  # Use enumerate for progress tracking
+        if direction == "t2t":
+            file = file.replace("txt", "json")
         logger.info(f'Processing file: {file}')
         print('--------------------------{}/{}-----------------------------------'.format(i,len(files_to_iterate)))
         try:

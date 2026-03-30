@@ -1,9 +1,13 @@
 # roundtrippingevaluation
 
 
+# Note:
+The implementation of the pipeline, along with the similarity computation, is available here: [git](https://anonymous.4open.science/r/llm-round-trip-correctness-8ABD/README.md).
+
+
 # 📁 Repository Overview
 
-In this repo we provide data, that was generated during the **evaluation** with the LLMs.  
+In this repo we provide data, that was generated during the **evaluation** with the LLMs.
 Since execution of the same prompts on the same data, does not **guarantee** the same results, we provide all generated **artifacts** as they are after generation for the further usage and evaluation.
 
 ---

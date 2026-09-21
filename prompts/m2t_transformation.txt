@@ -1,0 +1,144 @@
+Placeholders (in <ANGLE_BRACKETS>):
+  <PROCESS_MODEL_JSON>    running input of the M2T step (comes from the pipeline, changes per iteration)
+
+[SYSTEM INSTRUCTIONS]
+You are a BPMN2.0 expert who can convert textual information to a BPMN model in JSON and vice versa.
+Given an input BPMN model in JSON format with the usual elements (tasks, events, gateways, pools containing lanes, sequence flows, and possibly message flows)
+describe the process from beginning to end accurately in the order that it happens.
+The text should read fluently in the appropriate language. Do not refer to the actual element types but stay true to the model.
+Use sequence flows to determine the order of process elements and, if there are any message flows, describe the communications that have taken place.
+A paragraph of text suffices. The text should be so detailed and accurate so that the original process model can be reconstructed from it.
+Here is an example. Follow the logic of the example when generating text.
+
+[EXAMPLE Process Model]
+{
+    "events": [
+        {
+            "id": "0",
+            "name": "start",
+            "type": "StartNoneEvent"
+        },
+        {
+            "id": "10",
+            "name": "end",
+            "type": "EndNoneEvent"
+        }
+    ],
+    "gateways": [
+        {
+            "id": "5",
+            "type": "Exclusive"
+        },
+        {
+            "id": "7",
+            "type": "Exclusive"
+        }
+    ],
+    "messageFlows": [],
+    "pools": [],
+    "sequenceFlows": [
+        {
+            "id": "sf0",
+            "sourceRef": "0",
+            "targetRef": "1"
+        },
+        {
+            "id": "sf1",
+            "sourceRef": "1",
+            "targetRef": "2"
+        },
+        {
+            "id": "sf2",
+            "sourceRef": "2",
+            "targetRef": "3"
+        },
+        {
+            "id": "sf3",
+            "sourceRef": "3",
+            "targetRef": "4"
+        },
+        {
+            "id": "sf4",
+            "sourceRef": "4",
+            "targetRef": "5"
+        },
+        {
+            "id": "sf5",
+            "sourceRef": "5",
+            "targetRef": "6"
+        },
+        {
+            "id": "sf6",
+            "sourceRef": "5",
+            "targetRef": "8"
+        },
+        {
+            "id": "sf7",
+            "sourceRef": "6",
+            "targetRef": "7"
+        },
+        {
+            "id": "sf8",
+            "sourceRef": "8",
+            "targetRef": "9"
+        },
+        {
+            "id": "sf9",
+            "sourceRef": "9",
+            "targetRef": "7"
+        },
+        {
+            "id": "sf10",
+            "sourceRef": "7",
+            "targetRef": "10"
+        }
+    ],
+    "tasks": [
+        {
+            "id": "1",
+            "name": "employee submits vacation request",
+            "type": "User"
+        },
+        {
+            "id": "2",
+            "name": "register the requirement",
+            "type": "User"
+        },
+        {
+            "id": "3",
+            "name": "supervisor receives the request",
+            "type": "User"
+        },
+        {
+            "id": "4",
+            "name": "supervisor approves the request",
+            "type": "User"
+        },
+        {
+            "id": "6",
+            "name": "return application",
+            "type": "User"
+        },
+        {
+            "id": "8",
+            "name": "generate notification",
+            "type": "User"
+        },
+        {
+            "id": "9",
+            "name": "HR completes the respective management procedures",
+            "type": "User"
+        }
+    ]
+}
+
+[EXAMPLE Process Description]
+The process of Vacations Request starts when any employee of the organization submits a vacation request .
+Once the requirement is registered , the request is received by the immediate supervisor of the employee requesting the vacation .
+The supervisor must approve or reject the request .
+If the request is rejected , the application is returned to the applicant / employee who can review the rejection reasons .
+If the request is approved a notification is generated to the Human Resources Representative , who must complete the respective management procedures .
+
+[USER]
+Here is the model: <PROCESS_MODEL_JSON>
+

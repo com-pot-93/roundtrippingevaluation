@@ -1,0 +1,6 @@
+- Iterations:       10 round trips per file.
+- Models:           GPT-5-nano, Gemini 2.5 Flash, Claude 4.5 Opus, and Mistral Large Instruct.
+- Timeout:          120-second timeout with no retries.
+                    *Failed, timed-out, or invalid-JSON iterations are skipped.
+- Temperature:      input temperature (tranformation function) = 1, output tempreture (inverse function) = 0.
+- Max_Tokens:       8,000 tokens per call.

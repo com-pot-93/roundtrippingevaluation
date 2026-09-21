@@ -34,6 +34,8 @@
 | SAPSAM | 69 | 0.89 | 0.57 |
 | REALSET | 24 | 0.52 | 0.57 |
 
+![Results](pics/text_model_evaluation.pdf)
+
 ### Interpretation
 
 The results reveal an asymmetric relationship between the information expressed in the process descriptions and the tasks represented in the generated process models. At the representative similarity threshold of **0.65**, precision is substantially higher than recall for four of the five datasets. This indicates that most tasks in the generated process models can be aligned with information expressed in the corresponding process descriptions, whereas a considerable amount of information contained in the descriptions is not directly represented as process-model tasks.
@@ -41,8 +43,6 @@ The results reveal an asymmetric relationship between the information expressed 
 Importantly, the latter should not be interpreted as evidence that this information is irrelevant to the process. Process descriptions may contain contextual information, decision and gateway conditions, temporal constraints, business rules, or other domain-specific information that is relevant to understanding or executing the process but is not represented as an individual process-model task.
 
 The consistent relationship across the tested similarity thresholds further supports that this observation is not specific to the selected threshold.
-
-![Results](.pics/text_model_evaluation.pdf)
 
 ### REALSET
 

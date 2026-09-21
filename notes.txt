@@ -1,3 +1,26 @@
 files:
   - Completion Rate (4.2)
-    completion_rate.py -
+    completion_rate.py - (Table 3)
+    
+  - Stability across Runs (4.3)
+  
+    stability_calculate_all_values.py (requires iter_results/, creates files in stability/)
+    calculates per-description statistics over the iterations. Files with 0-1 iterations are excluded)
+        
+    stability_median_general.py (requires stability/, creates stability/general_summary.csv)
+    returns the median across descriptions of each statistic for every llm/dataset/direction/metric
+    
+    stability_median_cv_report_detailed.py (require general_summary.csv, creates trustworthiness.csv)
+    takes the median CV values and assigns corresponding status value (<2% High consistency, 2-5% Moderate consistency, 5-10% Acceptable, >=10% Substantial variability)
+    
+    stability_median_cv_status.py (require trustworthiness.csv)
+    prints for each direction how many dataset/metric combinations fall into each category
+    
+    stability_median_cv_summary.py (requires stability/)
+    prints the median CV values as tables: one table per direction and llm (Tables 4,5)    
+    
+    Mean-based comparison: The corresponding files for mean values have the same functionality and meaning, but calculate the mean values for comparison:
+    stability_mean_general.py, stability_mean_cv_report_detailed.py, stability_mean_cv_status.py, and stability_mean_cv_summary.py
+    
+
+

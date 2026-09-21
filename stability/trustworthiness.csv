@@ -1,0 +1,121 @@
+llm,example,direction,data_metric,CV_pct,MedianCV_pct,CI_width,mean_median_diff_pct,verdict,recommendation
+anthropic,domain,m2m,model_eval_1,2.47,1.02563278276872,0.0325022822433445,0.47554340102651,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,domain,m2m,model_eval_2,2.8018646602001,1.37870011882137,0.0328062323780617,0.617202496741573,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,domain,m2m,text_eval_1,1.46385036244864,0.6643728511475,0.0158211444938865,0.226806565583195,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,domain,m2m,text_eval_2,4.51344214029647,1.93282127018419,0.0353756382435347,1.13505299412825,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,domain,t2t,model_eval_1,0.0,0,0,0,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,domain,t2t,model_eval_2,1.1702778228589e-14,0,2.22044604925031E-16,1.11022302462516E-14,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,domain,t2t,text_eval_1,1.11037058418917,0.54822645163734,0.0126884263147879,0.249961837992238,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,domain,t2t,text_eval_2,4.02160588316385,1.1760674389422,0.0316142697473693,1.03800039147187,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,mad,m2m,model_eval_1,0.88,0,0.0113142073479606,0.163632596273177,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,mad,m2m,model_eval_2,1.05940442311025,0,0.0147425671952481,0.22056440723738,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,mad,m2m,text_eval_1,1.15544807373269,0.710146394554853,0.0136511628182512,0.164034454221677,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,mad,m2m,text_eval_2,5.88739210745907,2.74343098192714,0.0561371184042994,1.20789876125665,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,mad,t2t,model_eval_1,0.0,0,2.22044604925031E-16,1.13303263812899E-14,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,mad,t2t,model_eval_2,1.19372981891222e-14,0,2.22044604925031E-16,1.11367092221716E-14,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,mad,t2t,text_eval_1,0.926243936506007,0.457468164362077,0.0111228208100909,0.185753719595598,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,mad,t2t,text_eval_2,5.26070988618772,0.777595826582051,0.0532715279331321,1.02049915845307,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,pet,m2m,model_eval_1,3.0783615233702,1.49480578957625,0.0410522907259489,0.73628166173987,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,pet,m2m,model_eval_2,3.22045188345873,1.07128039969797,0.0412134033809957,0.598393884074896,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,pet,m2m,text_eval_1,1.68819133285429,0.924210184534009,0.0212568755314795,0.271549781468168,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,pet,m2m,text_eval_2,6.71145874762618,3.33332291597336,0.0641282752944494,1.62119738827917,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,pet,t2t,model_eval_1,3.01331350082268,0.899146505364284,0.0347148129801342,0.63995458642234,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,pet,t2t,model_eval_2,4.3047581848173,0.796694915859378,0.0472604766650586,0.605332082752189,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,pet,t2t,text_eval_1,1.73701834977021,0.762294413499001,0.0210277227075023,0.241244974884338,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,pet,t2t,text_eval_2,7.89314391596399,4.39789293808669,0.0771414553748316,1.66641876935318,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,realset,m2m,model_eval_1,3.37148552756804,2.20449298551904,0.0404722960895644,0.463961449822431,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,realset,m2m,model_eval_2,3.75473846106265,2.32447476270348,0.0431340728582444,0.566835419849971,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,realset,m2m,text_eval_1,1.72464100080401,1.13436544176096,0.0175715042578423,0.231554736113428,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,realset,m2m,text_eval_2,5.02251868571955,3.29206979181842,0.0381295853896231,0.749391175782838,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,realset,t2t,model_eval_1,4.87186148246835,2.44274660001914,0.0385494174317098,1.01830786015013,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,realset,t2t,model_eval_2,5.18349674095306,2.51310102150163,0.043359644821461,1.22736941686481,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,realset,t2t,text_eval_1,2.76493314256933,1.31539210211151,0.0298880505092566,0.472616654667742,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,realset,t2t,text_eval_2,6.55483134980006,3.75857497054228,0.0544413611866053,1.13775552518311,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,sapsam,m2m,model_eval_1,2.14250749526809,1.10361181334992,0.0285020118642594,0.422616502656263,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,sapsam,m2m,model_eval_2,2.58811020604055,1.56941247813915,0.032944757689394,0.469809756197025,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+anthropic,sapsam,m2m,text_eval_1,1.2019522040753,0.606239231733173,0.0163120978431851,0.223101507825059,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,sapsam,m2m,text_eval_2,5.46973146514277,2.7116415377434,0.0572050267456709,1.10530976120841,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+anthropic,sapsam,t2t,model_eval_1,1.12305924348813,0.00807140305166839,0.0127099556166574,0.233602875112301,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,sapsam,t2t,model_eval_2,1.47896288445205,0.00990197049213054,0.0169546104243519,0.435089425355084,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,sapsam,t2t,text_eval_1,1.08704709468629,0.559751079212341,0.0148014066760549,0.19523549257581,High consistency,CV below 2%: outputs are highly consistent across trials.
+anthropic,sapsam,t2t,text_eval_2,5.14790667539809,3.00996076424221,0.0564869429844688,1.11159049262263,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,domain,m2m,model_eval_1,3.46,1.54606025713192,0.0445125374178352,1.1048383959106,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,domain,m2m,model_eval_2,3.33500643190087,1.61267141798493,0.0385963630943741,0.725499147230867,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,domain,m2m,text_eval_1,1.72256809199314,0.895475023510108,0.0188912032210449,0.228758062659095,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,domain,m2m,text_eval_2,5.14141730358472,2.99641337242548,0.0423586228853143,0.755107429078316,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,domain,t2t,model_eval_1,2.05,0,0.0271032119721721,0.613780720116126,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,domain,t2t,model_eval_2,1.80149546264299,0,0.025403141273258,0.318345795618525,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,domain,t2t,text_eval_1,1.44587902125316,0.773827441797885,0.015759262071635,0.181710416846522,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,domain,t2t,text_eval_2,4.75989181993819,2.64624243633819,0.0353723957909531,0.596667341397898,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,mad,m2m,model_eval_1,2.57,0,0.0360365707735536,0.925957201960517,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,mad,m2m,model_eval_2,3.24208580491588,0,0.0451495586688389,1.17144286574413,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,mad,m2m,text_eval_1,1.39433083854468,0.839277180657824,0.0166184739518439,0.175330181753288,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,mad,m2m,text_eval_2,6.61845232103068,3.20361535491307,0.0684150982317894,1.31703359113477,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,mad,t2t,model_eval_1,1.47,0,0.0195867225480475,0.438522258563758,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,mad,t2t,model_eval_2,2.13400337287215,0,0.028947412489229,0.621979906138555,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,mad,t2t,text_eval_1,1.74681668915885,0.834597052973566,0.0208831919912243,0.223959334267851,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,mad,t2t,text_eval_2,8.21860916498431,4.47646713192058,0.0800163501017724,1.65230892844874,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,pet,m2m,model_eval_1,4.55460851224695,2.13036546664577,0.0582897991235364,0.888882349918721,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,pet,m2m,model_eval_2,5.25634577408493,2.99320082658797,0.066367536201547,1.18108778094489,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,pet,m2m,text_eval_1,1.37654410908145,0.772670457192336,0.0177342022500007,0.205880723612488,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,pet,m2m,text_eval_2,7.45591358103427,3.42532277804807,0.0800860889322144,1.16709182939508,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,pet,t2t,model_eval_1,5.43817410416258,2.89453788612002,0.0555168329965158,1.03756434727781,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,pet,t2t,model_eval_2,6.56776735146368,3.04036421620705,0.0696079671524109,1.15799511128473,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,pet,t2t,text_eval_1,1.57043088719991,0.865598391621845,0.0210232677324649,0.252775731464666,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,pet,t2t,text_eval_2,8.49637424120514,5.31418980365211,0.0796676527827741,1.53307446115372,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,realset,m2m,model_eval_1,3.89177208219927,2.35595670242399,0.0462108946343418,0.579201308931145,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,realset,m2m,model_eval_2,5.23311386625309,3.31073816740362,0.0617732314904804,0.920873872692713,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,realset,m2m,text_eval_1,1.95850303824022,1.40922641047069,0.02023026543485,0.327688606932674,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,realset,m2m,text_eval_2,5.82517003699211,3.74399595621802,0.0415837056431317,0.889555392193728,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,realset,t2t,model_eval_1,7.54352774888567,3.61840771955282,0.0591618692341254,1.05051649741054,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,realset,t2t,model_eval_2,8.74791558232749,5.19857174270865,0.0626525853639487,1.32456285537959,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,realset,t2t,text_eval_1,3.23240497109438,2.11258005820338,0.0361627938225048,0.440827130799336,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,realset,t2t,text_eval_2,9.40545867427924,6.06767325179161,0.0817526434217098,1.24302332263572,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,sapsam,m2m,model_eval_1,3.22891301949733,1.75523569133798,0.043160444804918,0.721171472838088,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,sapsam,m2m,model_eval_2,4.12537699099104,1.78665403197836,0.0520086951488384,0.726096000066038,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,sapsam,m2m,text_eval_1,1.15193387574591,0.634428717947779,0.0155573319242824,0.146651790283756,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,sapsam,m2m,text_eval_2,6.41665672640328,3.58822261709132,0.0709074404920984,1.2673957142633,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gemini,sapsam,t2t,model_eval_1,3.16469481734998,1.5415377150615,0.0411194035194216,0.586457342002411,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,sapsam,t2t,model_eval_2,3.81955886376669,2.20588235294118,0.0492450596336889,0.876790711830577,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gemini,sapsam,t2t,text_eval_1,1.27674636204478,0.693196362183503,0.0184801582688392,0.189064965095303,High consistency,CV below 2%: outputs are highly consistent across trials.
+gemini,sapsam,t2t,text_eval_2,6.85375024444963,3.47054506034678,0.0749405050469845,1.39602424691541,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,domain,m2m,model_eval_1,5.24,3.01287275263381,0.064873417329736,0.576998898839818,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,domain,m2m,model_eval_2,4.80144486092614,2.64400498019153,0.0598519290823664,0.529220588567599,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,domain,m2m,text_eval_1,1.84801855352855,1.20068508971389,0.0204810569487438,0.400767957234623,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,domain,m2m,text_eval_2,5.33330846528612,3.91739766090543,0.0374985700369433,0.860785350423395,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,domain,t2t,model_eval_1,1.18,0,0.0155190277754328,0.287841669563074,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,domain,t2t,model_eval_2,1.20595217033579,0,0.0167080160030469,0.312970126799925,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,domain,t2t,text_eval_1,1.99987950154077,1.13339728243767,0.0233253372692757,0.298246659323748,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,domain,t2t,text_eval_2,5.59615981041186,2.39491857194798,0.0402191329449022,0.840245855396608,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,mad,m2m,model_eval_1,2.51,0,0.0354962230384259,0.690728002620246,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,mad,m2m,model_eval_2,2.66205152802233,0,0.0383231128312924,0.719784254355223,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,mad,m2m,text_eval_1,1.67704976469847,1.02412998684008,0.0201491934274695,0.225729642781017,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,mad,m2m,text_eval_2,7.0729424266814,3.68249116481273,0.0724501545989355,1.24495016403883,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,mad,t2t,model_eval_1,1.1,0,0.0157379354943614,0.425843773767479,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,mad,t2t,model_eval_2,1.44944181943811,0,0.0200072929493411,0.571386946386954,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,mad,t2t,text_eval_1,1.9980307887322,1.17258444796189,0.0236032945613112,0.312391489723898,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,mad,t2t,text_eval_2,8.14237304945601,4.28024773834875,0.081590300264866,1.49238432230429,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,pet,m2m,model_eval_1,5.38881051194857,2.98413732576087,0.0654184324464022,0.837821106531169,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,pet,m2m,model_eval_2,5.63883498182681,3.09168874323622,0.0742252863595707,1.00080632114289,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,pet,m2m,text_eval_1,1.72034299340611,0.996849629354207,0.0213860392419606,0.252906317634443,High consistency,CV below 2%: outputs are highly consistent across trials.
+gpt,pet,m2m,text_eval_2,9.05046181050691,5.65307463296396,0.0903427450384661,1.97271374778515,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,pet,t2t,model_eval_1,6.6167660832294,3.9262224681516,0.075399656324504,0.731413320573874,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,pet,t2t,model_eval_2,7.16211204887437,4.54658897511013,0.0797605094055369,1.43767942008919,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,pet,t2t,text_eval_1,2.10607318719881,1.25945599259813,0.0263063790716748,0.250834741095055,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,pet,t2t,text_eval_2,12.0457000439137,7.56537214622325,0.116140809172911,1.29675716367161,Substantial variability,CV above 10%: outputs show substantial variability across trials.
+gpt,realset,m2m,model_eval_1,5.22310184559857,2.88156140826376,0.0609188207848038,0.50925443544068,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,realset,m2m,model_eval_2,4.84435476406878,3.12970224224803,0.0572722424072106,0.746744328956852,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,realset,m2m,text_eval_1,2.49476749177938,1.19564398375952,0.0255920749090129,0.374076665424863,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,realset,m2m,text_eval_2,8.63022340128186,5.43191399596015,0.0666656002071557,1.66512596743642,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,realset,t2t,model_eval_1,8.35461218088881,5.52751630218141,0.0727982112909767,1.82679900543936,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,realset,t2t,model_eval_2,8.63136291138696,6.24844016704156,0.0740143576458762,1.4476921128356,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,realset,t2t,text_eval_1,3.23545424984276,1.60418327752585,0.0363191267035601,0.684525747136968,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,realset,t2t,text_eval_2,12.5115033439062,7.76991388412164,0.0998267793566004,1.4557096020252,Substantial variability,CV above 10%: outputs show substantial variability across trials.
+gpt,sapsam,m2m,model_eval_1,4.93911190184988,3.27005084579697,0.0613553221842678,0.869731376731923,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,sapsam,m2m,model_eval_2,5.40406623757151,3.7803389487062,0.0664289128336355,0.710126854259973,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,sapsam,m2m,text_eval_1,2.346950897445,1.13090179288081,0.0304763894876849,0.283919407665864,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,sapsam,m2m,text_eval_2,7.03460488509179,4.47777746434584,0.0703805389835243,1.30475331970025,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."
+gpt,sapsam,t2t,model_eval_1,3.53716907008018,2.10996495620887,0.0416018035422436,0.500983581915813,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,sapsam,t2t,model_eval_2,3.93518718127252,2.54265151791912,0.0453260968364067,0.704905908261546,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,sapsam,t2t,text_eval_1,2.39848517994913,1.21064946348838,0.0314980131104936,0.457902696754164,Moderate consistency,CV between 2% and 5%: outputs show moderate variability across trials.
+gpt,sapsam,t2t,text_eval_2,7.47562478969933,4.63385057938177,0.0759314017460446,1.17341483549863,Acceptable,"CV between 5% and 10%: outputs are usable, but note the higher variability."

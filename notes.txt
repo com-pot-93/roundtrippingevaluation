@@ -1,0 +1,65 @@
+Directories:
+  generated_artifacts - contains files generated during 10 runs using the proposed pipelines. Each file is a JSON object where the key is the filename and the value is an array containing the results from iterations 0–9. Each iteration includes both the model and the generated text.
+  iter_results - Contains similarity measurements calculated independently for each iteration.
+  results - Contains the average similarity values calculated across all 10 iterations.
+  stability - Contains the stability evaluation of the 10 iterations, including various statistical measures used to assess consistency across runs.
+  check - Contains values calculated during the comparison of texts and models across all 5 datasets. These metrics are used to evaluate the consistency of the proposed pipelines across datasets.
+
+Tables:
+  - Completion Rate (4.2)
+    completion_rate.py - (Table 3)
+
+  - Stability across Runs (4.3)
+    stability_calculate_all_values.py (requires iter_results/, creates files in stability/)
+    calculates per-description statistics over the iterations. Files with 0-1 iterations are excluded)
+
+    stability_median_general.py (requires stability/, creates stability/general_summary.csv)
+    returns the median across descriptions of each statistic for every llm/dataset/direction/metric
+
+    stability_median_cv_report_detailed.py (require general_summary.csv, creates trustworthiness.csv)
+    takes the median CV values and assigns corresponding status value (<2% High consistency, 2-5% Moderate consistency, 5-10% Acceptable, >=10% Substantial variability)
+
+    stability_median_cv_status.py (require trustworthiness.csv)
+    prints for each direction how many dataset/metric combinations fall into each category
+
+    stability_median_cv_summary.py (requires stability/)
+    prints the median CV values as tables: one table per direction and llm (Tables 4,5)
+
+    Mean-based comparison: The corresponding files for mean values have the same functionality and meaning, but calculate the mean values for comparison:
+    stability_mean_general.py, stability_mean_cv_report_detailed.py, stability_mean_cv_status.py, and stability_mean_cv_summary.py
+
+  - Performance Overview (4.4):
+    performance_absolute.py - (Tables 6,7)
+
+    performance_friedman_detailed.py (requires results/ and iter_results/)
+    a detailed listing for each direction and dataset, and each metric, printing the number of files, the LLMs compared, chi2,  p, and the mean rank of every LLM
+
+    performance_friedman.py (requires results/ and iter_results/)
+    performs friedman's test and prints a table with chi2, p, winner, and significance (p < 0.05) for each direction, dataset and metric (Table 8)
+
+    performance_nemenyi_detailed.py (requires results/ and iter_results/)
+    reurns winner and loser od ranking, their mean scores, the raw score difference, Nemenyi p, magnitude, significance, and Friedman p
+
+    performance_nemenyi_summary.py (requires results/ and iter_results/)
+    if the Friedman test is significant, counts the Nemenyi pairwise p-value matrix, the mean rank per LLM with the critical difference, and the pairwise rank differences.
+    prints the number of significant pairwise comparisons overall and per LLM pair
+
+    performance_kendall_summary.py (requires results/ and iter_results/)
+    computes Kendall's W from the Friedman statistic, to define how strongly the LLMs agree in how they rank the files
+
+  - RTC (4.5):
+    rtc_correlation.py - (Tables 9, 10, 11)
+
+Figures:
+  - Git: Model-to-text Overlap (4.1)
+    plot_text_model_bars.py - vizualize the average model to text evaluation (precision and recall) for all datasets
+
+  - Performance Overview (4.4):
+    plot_similarity_trends.py - vizialize average similariy scores for all datasets, pipleines, and directions [Mean Similarity Trends for M2M/T2T Pipeline (Fig. 7, 8)]
+
+  - RTC Spread Across Domains (4.6)
+    scripts for vizualization of box plots for ximilarity measured across domains and business areas (Fig. 9-12)
+    plot_domain_boxplots_all_llms.py
+    plot_mad_boxplots_all_llms.py
+
+

@@ -1,26 +1,42 @@
 files:
   - Completion Rate (4.2)
     completion_rate.py - (Table 3)
-    
+
   - Stability across Runs (4.3)
-  
     stability_calculate_all_values.py (requires iter_results/, creates files in stability/)
     calculates per-description statistics over the iterations. Files with 0-1 iterations are excluded)
-        
+
     stability_median_general.py (requires stability/, creates stability/general_summary.csv)
     returns the median across descriptions of each statistic for every llm/dataset/direction/metric
-    
+
     stability_median_cv_report_detailed.py (require general_summary.csv, creates trustworthiness.csv)
     takes the median CV values and assigns corresponding status value (<2% High consistency, 2-5% Moderate consistency, 5-10% Acceptable, >=10% Substantial variability)
-    
+
     stability_median_cv_status.py (require trustworthiness.csv)
     prints for each direction how many dataset/metric combinations fall into each category
-    
+
     stability_median_cv_summary.py (requires stability/)
-    prints the median CV values as tables: one table per direction and llm (Tables 4,5)    
-    
+    prints the median CV values as tables: one table per direction and llm (Tables 4,5)
+
     Mean-based comparison: The corresponding files for mean values have the same functionality and meaning, but calculate the mean values for comparison:
     stability_mean_general.py, stability_mean_cv_report_detailed.py, stability_mean_cv_status.py, and stability_mean_cv_summary.py
-    
 
+  - Performance Overview:
+    performance_absolute.py - (Tables 6,7)
+
+    performance_friedman_detailed.py (requires results/ and iter_results/)
+    a detailed listing for each direction and dataset, and each metric, printing the number of files, the LLMs compared, chi2,  p, and the mean rank of every LLM
+
+    performance_friedman.py (requires results/ and iter_results/)
+    performs friedman's test and prints a table with chi2, p, winner, and significance (p < 0.05) for each direction, dataset and metric (Table 8)
+
+    performance_nemenyi_detailed.py (requires results/ and iter_results/)
+    reurns winner and loser od ranking, their mean scores, the raw score difference, Nemenyi p, magnitude, significance, and Friedman p
+
+    performance_nemenyi_summary.py (requires results/ and iter_results/)
+    if the Friedman test is significant, counts the Nemenyi pairwise p-value matrix, the mean rank per LLM with the critical difference, and the pairwise rank differences.
+    prints the number of significant pairwise comparisons overall and per LLM pair
+
+    performance_kendall_summary.py (requires results/ and iter_results/)
+    computes Kendall's W from the Friedman statistic, to define how strongly the LLMs agree in how they rank the files
 

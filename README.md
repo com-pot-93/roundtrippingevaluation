@@ -4,6 +4,31 @@
 
 The implementation of the pipelines, along with the similarity computation, is available here: [Git](https://anonymous.4open.science/r/llm-round-trip-correctness-8ABD/README.md).
 
+## Running the Scripts
+
+First, install the project dependencies:
+
+```bash
+    poetry install
+```
+
+You can then run the scripts in either of the following ways.
+
+### Option 1: Activate the Poetry environment
+
+```bash
+    poetry shell
+    python <script.py>
+```
+
+### Option 2: Run directly through Poetry
+
+```bash
+    poetry run python <script.py>
+```
+
+Replace `<script.py>` with the path to the script you want to run.
+
 ## Repository Overview
 
 This repository provides the data and analysis scripts used during the evaluation of the LLMs.

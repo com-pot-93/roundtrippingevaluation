@@ -10,29 +10,17 @@
 | SAPSAM | 69 | 0.97 | 0.61 |
 | REALSET | 24 | 0.68 | 0.65 |
 
-### Similarity Threshold: 0.60
+### Text-model similarity, average per dataset
 
-**Text-model similarity, average per dataset**
+| Dataset | Files | Precision | Recall | | Dataset | Files | Precision | Recall |
+|---|---:|---:|---:|---|---|---:|---:|---:|
+| **Similarity Threshold: 0.60** | | | | | **Similarity Threshold: 0.70** | | | |
+| Domain | 25 | 1.00 | 0.54 | | Domain | 25 | 0.90 | 0.49 |
+| MAD | 150 | 0.99 | 0.73 | | MAD | 150 | 0.82 | 0.65 |
+| PET | 36 | 0.99 | 0.80 | | PET | 36 | 0.86 | 0.74 |
+| SAPSAM | 69 | 0.99 | 0.62 | | SAPSAM | 69 | 0.89 | 0.57 |
+| REALSET | 24 | 0.86 | 0.73 | | REALSET | 24 | 0.52 | 0.57 |
 
-| Dataset | Files | Precision | Recall |
-|---|---:|---:|---:|
-| Domain | 25 | 1.00 | 0.54 |
-| MAD | 150 | 0.99 | 0.73 |
-| PET | 36 | 0.99 | 0.80 |
-| SAPSAM | 69 | 0.99 | 0.62 |
-| REALSET | 24 | 0.86 | 0.73 |
-
-### Similarity Threshold: 0.70
-
-**Text-model similarity, average per dataset**
-
-| Dataset | Files | Precision | Recall |
-|---|---:|---:|---:|
-| Domain | 25 | 0.90 | 0.49 |
-| MAD | 150 | 0.82 | 0.65 |
-| PET | 36 | 0.86 | 0.74 |
-| SAPSAM | 69 | 0.89 | 0.57 |
-| REALSET | 24 | 0.52 | 0.57 |
 
 ![Results](pics/text_model_evaluation.png)
 

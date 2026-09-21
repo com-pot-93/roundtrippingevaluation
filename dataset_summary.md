@@ -42,6 +42,8 @@ Importantly, the latter should not be interpreted as evidence that this informat
 
 The consistent relationship across the tested similarity thresholds further supports that this observation is not specific to the selected threshold.
 
+![Results](.pics/text_model_evaluation.pdf)
+
 ### REALSET
 
 REALSET differs substantially from the other datasets. Its precision of **0.68** indicates that a considerably larger proportion of generated tasks cannot be directly aligned with the corresponding process descriptions. This suggests that the REALSET process models contain substantially more task-level information that is not explicitly represented in their associated descriptions.

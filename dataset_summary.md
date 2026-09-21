@@ -34,7 +34,7 @@
 | SAPSAM | 69 | 0.89 | 0.57 |
 | REALSET | 24 | 0.52 | 0.57 |
 
-![Results](pics/text_model_evaluation.pdf)
+![Results](pics/text_model_evaluation.png)
 
 ### Interpretation
 

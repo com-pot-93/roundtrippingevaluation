@@ -1,5 +1,8 @@
+Note: All parameters and model IDs are listed below. Prompts for both directions are provided in the files `m2t_transformation.txt` and `t2m_transformation.txt`.
+
 - Iterations:       10 round trips per file.
-- Models:           GPT-5-nano, Gemini 2.5 Flash, Claude 4.5 Opus, and Mistral Large Instruct.
+- Models:           GPT-5 (`gpt-5`), Gemini 2.5 Pro (`gemini-2.5-pro`), and
+                    Claude Opus 4.5 (`anthropic--claude-4.5-opus`).
 - Timeout:          120-second timeout with no retries.
                     *Failed, timed-out, or invalid-JSON iterations are skipped.
 - Temperature:      input temperature (tranformation function) = 1, output tempreture (inverse function) = 0.

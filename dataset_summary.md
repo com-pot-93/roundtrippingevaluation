@@ -1,5 +1,9 @@
 ## Results
 
+Precision = (number of matched tasks) / (total number of tasks)
+
+Recall = (number of distinct sentences picked by a matched task) / (total number of sentences)
+
 ### Similarity Threshold: 0.65
 
 | Dataset | Files | Precision | Recall |

@@ -201,4 +201,7 @@ Generates domain-level box plots across all LLMs using the results from the **10
 
 Generates box plots based on the mean absolute deviation (MAD) across all LLMs using the results from the **10 evaluation iterations**.
 
+## Generative AI Disclaimer
+
+Generative AI tools were used to assist with code formatting and structuring, particularly for indentation and visual presentation, as well as for converting text into Markdown format for the README. All generated code and text were subsequently reviewed, revised, and tested by the authors.
 
